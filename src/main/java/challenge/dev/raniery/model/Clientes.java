@@ -23,5 +23,5 @@ public class Clientes {
 
     @OneToMany(mappedBy = "clientes", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Contatos> contatos = new ArrayList<>();
+    private List<Contatos> contatos = new ArrayList<Contatos>();
 }
