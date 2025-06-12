@@ -6,16 +6,16 @@ import jakarta.validation.constraints.NotNull;
 
 public record ContatoDTO(
 
-    @NotBlank
+    @NotBlank(message = "Nome é obrigatório")
     String nome,
-
-    @NotBlank
+    
+    @NotBlank(message = "Telefone é obrigatório")
     String telefone,
-
-    @Email
-    @NotBlank
+    
+    @Email(message = "Email deve ter formato válido")
+    @NotBlank(message = "Email é obrigatório")
     String email,
-
-    @NotNull
+    
+    @NotNull(message = "Cliente ID é obrigatório")
     Long clienteId) {
 }

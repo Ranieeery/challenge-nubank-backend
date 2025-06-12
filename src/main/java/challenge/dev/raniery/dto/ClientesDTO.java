@@ -6,7 +6,7 @@ import java.util.List;
 
 public record ClientesDTO(
 
-    @NotBlank
+    @NotBlank(message = "Nome é obrigatório")
     String nome,
 
     List<ContatoDTO> contatos) {
