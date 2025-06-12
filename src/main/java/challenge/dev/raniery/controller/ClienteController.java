@@ -5,6 +5,7 @@ import challenge.dev.raniery.dto.ClientesResponseDTO;
 import challenge.dev.raniery.dto.ContatoResponseDTO;
 import challenge.dev.raniery.model.Clientes;
 import challenge.dev.raniery.service.ClientesService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,14 +22,10 @@ public class ClienteController {
     private final ClientesService clientesService;
 
     @PostMapping
-    public ResponseEntity<Clientes> criar(@RequestBody ClientesDTO dto, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<Clientes> criar(@Valid @RequestBody ClientesDTO dto, UriComponentsBuilder uriBuilder) {
         Clientes cliente = clientesService.salvarClientes(dto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(cliente);
-
-//        URI uri = uriBuilder.path("/list/{id}").buildAndExpand(dto.getId()).toUri();
-//
-//        return ResponseEntity.created().body(clienteSalvo);
     }
 
     @GetMapping
