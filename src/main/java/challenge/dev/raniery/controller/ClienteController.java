@@ -14,7 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/clientes")
 @RequiredArgsConstructor
 public class ClienteController {
 

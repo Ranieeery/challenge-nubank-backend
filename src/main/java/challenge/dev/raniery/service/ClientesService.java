@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ClientesService {
 
-    private ClientesRepository clientesRepository;
+    private final ClientesRepository clientesRepository;
 
     public Clientes salvarClientes(ClientesDTO dto) {
 
